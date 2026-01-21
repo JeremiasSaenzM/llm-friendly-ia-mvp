@@ -1,0 +1,31 @@
+{
+  "id": "plans",
+  "label": "Plans",
+  "description": "Information related to customer plans, eligibility, pricing, and changes",
+  "subtopics": [
+    {
+      "id": "consumer",
+      "label": "Consumer",
+      "description": "Plan information applicable to individual consumer customers",
+      "subsections": [
+        {
+          "id": "phones",
+          "label": "Phones",
+          "description": "Consumer phone plans and related experiences",
+          "levels": [
+            {
+              "id": "trade-ins",
+              "label": "Trade-ins",
+              "description": "Customer scenarios involving trading in devices as part of a plan",
+              "llm_notes": {
+                "retrieval_intent": "Used when users ask about trade-in eligibility, process, or plan impact",
+                "anti_duplication_rule": "Trade-in content must live only here, not duplicated across devices or promotions",
+                "human_vs_llm": "Humans may encounter trade-ins in multiple journeys; LLMs require a single canonical source"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
