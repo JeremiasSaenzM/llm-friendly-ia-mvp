@@ -1,0 +1,18 @@
+{
+  "mappings": [
+    {
+      "ia_node_id": "plans.consumer.phones.trade-ins",
+      "content_path": "content/plans/consumer/phones/trade-ins.md",
+      "canonical": true,
+      "retrieval_notes": {
+        "intended_queries": [
+          "trade in phone",
+          "trade-in eligibility",
+          "trade in impact on plan",
+          "how to trade in a device"
+        ],
+        "notes": "This is the single authoritative content source for trade-in scenarios."
+      }
+    }
+  ]
+}
