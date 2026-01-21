@@ -80,6 +80,24 @@ The mapping enables systems to retrieve content without relying on convention or
 
 ---
 
+## Label Ownership and Presentation Responsibility
+
+Human-readable labels used by frontend consumers are defined explicitly in the IA-to-content mapping layer rather than being derived or inferred at the UI level.
+
+### Rationale
+
+- IA node identifiers (e.g. `plans.consumer.phones.trade-ins`) are intentionally technical and optimized for consistency, traceability, and machine consumption.
+- Human-readable labels represent semantic intent and should therefore be authored intentionally, not generated heuristically.
+- Deriving labels in the frontend (e.g. parsing path segments) introduces hidden semantics, increases coupling, and risks inconsistency as the IA evolves.
+
+### Implementation
+
+- Each IA-to-content mapping includes an explicit `label` field.
+- Frontend consumers render labels exactly as provided by the mapping layer.
+- The frontend does not manipulate, shorten, or reinterpret IA identifiers for presentation purposes.
+
+---
+
 ## Scalability Validation
 The model was validated by adding additional Level 4 scenarios without:
 - Changing the IA structure

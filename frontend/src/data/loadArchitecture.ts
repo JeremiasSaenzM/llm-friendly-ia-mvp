@@ -17,6 +17,7 @@ export function loadArchitecture() {
 
     return {
       iaNodeId: mapping.ia_node_id,
+      label: mapping.label,
       contentPath: mapping.content_path,
       content
     }

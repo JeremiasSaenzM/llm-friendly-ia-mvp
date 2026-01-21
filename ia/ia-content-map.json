@@ -3,6 +3,7 @@
     {
       "ia_node_id": "plans.consumer.phones.trade-ins",
       "content_path": "content/plans/consumer/phones/trade-ins.md",
+      "label": "Trade-ins",
       "canonical": true,
       "retrieval_notes": {
         "intended_queries": [
@@ -17,6 +18,7 @@
     {
       "ia_node_id": "plans.consumer.phones.plan-changes",
       "content_path": "content/plans/consumer/phones/plan-changes.md",
+      "label": "Plan changes",
       "canonical": true,
       "retrieval_notes": {
         "intended_queries": [
