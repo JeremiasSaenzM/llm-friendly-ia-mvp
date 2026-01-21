@@ -1,6 +1,24 @@
 import { useState } from 'react'
 import { loadArchitecture } from './data/loadArchitecture'
 
+function renderBreadcrumbs(iaNodeId: string) {
+  const parts = iaNodeId.split('.')
+
+  return parts.map((part, index) => {
+    const label = part
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ')
+
+    return (
+      <span key={index}>
+        {label}
+        {index < parts.length - 1 && ' → '}
+      </span>
+    )
+  })
+}
+
 function App() {
   const data = loadArchitecture()
   const [selectedIndex, setSelectedIndex] = useState(0)
@@ -25,6 +43,11 @@ function App() {
       </label>
 
       <hr />
+
+      <p style={{ color: '#555', marginTop: '1rem' }}>
+        <strong>IA Path:</strong>{' '}
+        {renderBreadcrumbs(selectedScenario.iaNodeId)}
+      </p>
 
       <h2>{selectedScenario.label}</h2>
       <p>
