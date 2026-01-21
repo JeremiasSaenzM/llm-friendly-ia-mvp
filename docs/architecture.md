@@ -106,3 +106,28 @@ This project demonstrates that:
 - Canonical ownership improves AI reliability
 - Clean separation of concerns simplifies scaling
 - Architecture-first design reduces downstream complexity
+
+## Frontend Validation Milestone
+
+A minimal React + TypeScript frontend was implemented to validate that the defined Information Architecture (IA) and canonical content can be consumed by a client application without redefining structure.
+
+### What was validated
+
+- IA models are consumable as static data artifacts
+- IA → content mappings resolve deterministically
+- Canonical content authored in Markdown can be ingested as raw text
+- The frontend renders content based solely on architecture-driven selection
+- No IA rules, structure, or content ownership are reimplemented in the UI
+
+### Current behavior
+
+At this stage, the frontend renders a single scenario by explicitly selecting the first resolved IA scenario from the data pipeline. This is an intentional limitation used to validate end-to-end data flow before introducing UI-driven selection or navigation.
+
+### Why this matters
+
+This milestone demonstrates that the IA and content design are:
+- Self-sufficient
+- Machine-consumable
+- Suitable for downstream systems such as UIs or LLM ingestion pipelines
+
+UI complexity (selectors, trees, navigation) is intentionally deferred to avoid obscuring architectural validation with presentation concerns.
