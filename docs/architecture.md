@@ -149,3 +149,5 @@ This milestone demonstrates that the IA and content design are:
 - Suitable for downstream systems such as UIs or LLM ingestion pipelines
 
 UI complexity (selectors, trees, navigation) is intentionally deferred to avoid obscuring architectural validation with presentation concerns.
+
+The frontend visualizes full IA paths (breadcrumbs) derived from canonical IA node identifiers to demonstrate complete architecture ingestion rather than selective data consumption.
