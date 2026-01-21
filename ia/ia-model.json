@@ -22,6 +22,16 @@
                 "anti_duplication_rule": "Trade-in content must live only here, not duplicated across devices or promotions",
                 "human_vs_llm": "Humans may encounter trade-ins in multiple journeys; LLMs require a single canonical source"
               }
+            },
+            {
+              "id": "plan-changes",
+              "label": "Plan Changes",
+              "description": "Customer scenarios involving changes to an existing phone plan",
+              "llm_notes": {
+                "retrieval_intent": "Used when users ask about changing plans, upgrading, downgrading, or modifying plan features",
+                "anti_duplication_rule": "Plan change content must live only here and not be duplicated under promotions or accounts",
+                "human_vs_llm": "Humans may reach plan changes through multiple journeys; LLMs require a single canonical source"
+              }
             }
           ]
         }

@@ -13,6 +13,20 @@
         ],
         "notes": "This is the single authoritative content source for trade-in scenarios."
       }
+    },
+    {
+      "ia_node_id": "plans.consumer.phones.plan-changes",
+      "content_path": "content/plans/consumer/phones/plan-changes.md",
+      "canonical": true,
+      "retrieval_notes": {
+        "intended_queries": [
+          "change my plan",
+          "upgrade my plan",
+          "downgrade my plan",
+          "modify phone plan"
+        ],
+        "notes": "Single authoritative source for plan change scenarios."
+      }
     }
   ]
 }
