@@ -1,85 +1,118 @@
-# MVP Baseline – LLM-Friendly Information Architecture
+# LLM-Friendly Information Architecture MVP
 
-## Purpose of this Branch
+This repository contains a minimal working prototype demonstrating how Information Architecture can be modeled as machine-consumable structured data and rendered directly by a frontend application.
 
-This branch represents the **Minimum Viable Product (MVP) baseline** for the project.
+This branch (`mvp-baseline`) represents the frozen reference implementation discussed in the accompanying article:
 
-Its goal is to demonstrate — with the smallest possible surface area — that an Information Architecture (IA) can be:
-
-- Explicitly modeled as structured data
-- Consumed by a frontend without reinterpretation
-- Designed to support both human understanding and AI / LLM-based retrieval
-
-This branch is intentionally **minimal and frozen**.
-
-It exists as a reference point, not as a feature-complete solution.
+[INSERT LINK TO ARTICLE]
 
 ---
 
-## What This MVP Includes
+## Context
 
-This baseline intentionally includes only what is strictly necessary to prove viability:
+This project explores how Information Architecture traditionally designed for human navigation can be represented and consumed by software systems — including AI-driven retrieval workflows.
 
-- A typed IA domain model (TypeScript)
-- A minimal React frontend that consumes the IA as modeled
-- Direct traversal of the IA structure (no shortcuts, no hardcoding)
-- Clear separation between:
-  - IA definition
-  - UI rendering
-  - Interaction logic
+Rather than remaining conceptual, the MVP demonstrates these ideas through executable implementation and visualization.
 
-No abstractions are introduced unless they are required to support the core idea.
+It prioritizes architectural clarity over feature completeness.
 
 ---
 
-## What This MVP Intentionally Excludes
+## What This MVP Demonstrates
 
-The following are **explicitly out of scope** for this branch:
-
-- Multiple IA roots or large-scale hierarchies
-- Advanced React patterns (composition, memoization, optimization)
-- Async data loading or API integration
-- State management beyond what is strictly required
-- Styling, UX polish, or production concerns
-- Performance tuning
-- Testing infrastructure
-
-These exclusions are intentional and reflect architectural restraint.
+- Structured IA modeling as hierarchical data
+- Canonical ownership encoding
+- Type-enforced architecture contracts
+- Separation of structure from presentation
+- Frontend-driven consumption of IA data
+- Breadcrumb visualization of hierarchy traversal
 
 ---
 
-## Why Minimalism Matters Here
+## Architecture Overview
 
-This branch is designed to answer a single question:
+The system is composed of:
 
-> *Can an explicitly modeled Information Architecture be consumed by a frontend in a way that preserves its intended meaning and structure?*
+- JSON-based architecture definitions
+- Markdown content nodes
+- TypeScript traversal layer
+- React frontend rendering layer
 
-By keeping the solution minimal:
-- The signal is not obscured by implementation detail
-- Architectural intent remains clear
-- Future evolution can be reasoned about deliberately
+The frontend interprets structure rather than defining it, ensuring architecture remains the source of truth.
 
-This branch proves **that the problem is solvable** — nothing more.
-
----
-
-## Where Development Continues
-
-All further development, experimentation, and learning happens on the `main` branch.
-
-The `main` branch:
-- Builds on top of this baseline
-- Introduces complexity only when justified
-- Documents why and when new patterns are adopted
-
-If you want to understand how the project evolves beyond the MVP, switch to `main`.
+(Insert architecture diagram here if desired)
 
 ---
 
-## How to Use This Branch
+## Technology Stack
 
-- Treat this branch as a snapshot
-- Do not add features here
-- Use it as a comparison point when evaluating later changes
+### Frontend
+- React
+- TypeScript
+- Vite
 
-This branch represents a moment of architectural clarity.
+### Modeling
+- JSON-based IA structures
+- Markdown content nodes
+
+### Tooling
+- Node
+- Git
+- VS Code
+
+---
+
+## Running the MVP
+
+```
+npm install
+npm run dev
+```
+
+---
+
+## Scope Discipline
+
+This implementation is intentionally minimal.
+
+It excludes:
+
+- Persistence layers
+- Indexing pipelines
+- Retrieval engines
+- Vector search integrations
+- Deployment automation
+
+These omissions are deliberate.  
+The objective is architectural signal clarity rather than system completeness.
+
+---
+
+## Role of This Repository
+
+This repository is not intended as a production system.
+
+It exists as:
+
+- an architectural exploration
+- an executable reference artifact
+- a platform for iterative learning and extension
+
+Its value lies in demonstrating structural principles through implementation.
+
+---
+
+## Future Directions
+
+Potential areas of exploration:
+
+- Retrieval simulation layer
+- Vector indexing experimentation
+- Multi-consumer architecture modeling
+- Expanded IA domains
+
+---
+
+## License
+
+Add license details here if publishing publicly.
