@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { loadArchitecture } from './data/loadArchitecture'
+import { useArchitecture } from './hooks/useArchitecture'
 
 function renderBreadcrumbs(iaNodeId: string) {
   const parts = iaNodeId.split('.')
@@ -20,7 +20,7 @@ function renderBreadcrumbs(iaNodeId: string) {
 }
 
 function App() {
-  const data = loadArchitecture()
+  const data = useArchitecture()
   const [selectedIndex, setSelectedIndex] = useState(0)
   const selectedScenario = data.scenarios[selectedIndex]
 
