@@ -2,9 +2,10 @@ import iaModel from '../../../ia/ia-model.json'
 import contentMap from '../../../ia/ia-content-map.json'
 import tradeInsContent from '../../../content/plans/consumer/phones/trade-ins.md?raw'
 import planChangesContent from '../../../content/plans/consumer/phones/plan-changes.md?raw'
+import type { ArchitectureModel, Scenario } from '../types/ia'
 
-export function loadArchitecture() {
-  const scenarios = contentMap.mappings.map(mapping => {
+export function loadArchitecture(): ArchitectureModel {
+  const scenarios: Scenario[] = contentMap.mappings.map(mapping => {
     let content = ''
 
     if (mapping.content_path.includes('trade-ins')) {

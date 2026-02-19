@@ -1,4 +1,5 @@
 import { loadArchitecture } from '../data/loadArchitecture'
+import type { ArchitectureModel } from '../types/ia'
 
 /**
  * useArchitecture
@@ -10,7 +11,7 @@ import { loadArchitecture } from '../data/loadArchitecture'
  * - validation
  * - schema normalization
  */
-export function useArchitecture() {
+export function useArchitecture(): ArchitectureModel {
   const data = loadArchitecture()
 
   return data
