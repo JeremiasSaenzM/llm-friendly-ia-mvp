@@ -4,7 +4,7 @@ This repository contains a minimal working prototype demonstrating how Informati
 
 This branch (`mvp-baseline`) represents the frozen reference implementation discussed in the accompanying article:
 
-[INSERT LINK TO ARTICLE]
+https://www.linkedin.com/pulse/building-ia-mvp-ai-consumption-from-concept-prototype-jeremias-saenz-cwkbe/?trackingId=xdjRTyLGSwqw44POFq%2BRrg%3D%3D
 
 ---
 
