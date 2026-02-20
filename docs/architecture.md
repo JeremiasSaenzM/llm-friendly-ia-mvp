@@ -186,3 +186,41 @@ Content resolution currently relies on conditional string matching against `cont
 ### Next Step
 
 Refactor content resolution into a data-driven lookup model to eliminate branching logic and align with scalable, declarative content resolution patterns.
+
+---
+
+## Iteration 3 – Transition to Data-Driven Content Resolution
+
+### Context
+
+The initial MVP resolved markdown content through conditional string matching against `content_path`. This approach worked for a small number of scenarios but introduced branching logic tied to specific file names.
+
+### Architectural Limitation
+
+Conditional resolution via `includes()` creates:
+
+- Hardcoded assumptions about file naming
+- Reduced scalability as scenarios increase
+- Increased maintenance effort for each new scenario
+- Implicit behavior embedded in control flow
+
+As the number of content scenarios grows, this pattern becomes fragile and difficult to extend cleanly.
+
+### Decision
+
+Replace conditional string matching with a data-driven lookup structure.
+
+Content resolution will be handled via a typed `Record<string, string>` mapping:
+
+- Key → `content_path`
+- Value → Imported markdown content
+
+This shifts resolution from branching logic to explicit key-based mapping.
+
+### Architectural Impact
+
+- Eliminates conditional branching
+- Makes resolution logic declarative
+- Improves scalability
+- Aligns with domain-driven modeling principles
+- Prepares the architecture for future dynamic loading strategies
