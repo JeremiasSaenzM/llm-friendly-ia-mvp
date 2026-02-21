@@ -71,6 +71,3 @@ export default defineConfig([
   },
 ])
 ```
-## Architectural Thinking Notes
-
-The `/thinking` directory contains structured, evolving reflections that accompany the implementation work in this repository. These notes are exploratory and subject to refinement.

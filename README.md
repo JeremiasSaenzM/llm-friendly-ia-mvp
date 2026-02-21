@@ -36,3 +36,7 @@ This repository is organized to separate **structure**, **content**, and **syste
   Provides architectural context and design rationale.
 
 The project is intended to be read from an architecture-first perspective, not as a complete application.
+
+## Architectural Thinking Notes
+
+The `/thinking` directory contains structured, evolving reflections that accompany the implementation work in this repository. These notes are exploratory and subject to refinement.
