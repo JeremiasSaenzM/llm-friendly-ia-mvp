@@ -4,17 +4,14 @@ import tradeInsContent from '../../../content/plans/consumer/phones/trade-ins.md
 import planChangesContent from '../../../content/plans/consumer/phones/plan-changes.md?raw'
 import type { ArchitectureModel, Scenario } from '../types/ia'
 
+const contentLookup: Record<string, string> = {
+  'content/plans/consumer/phones/trade-ins.md': tradeInsContent,
+  'content/plans/consumer/phones/plan-changes.md': planChangesContent
+}
+
 export function loadArchitecture(): ArchitectureModel {
   const scenarios: Scenario[] = contentMap.mappings.map(mapping => {
-    let content = ''
-
-    if (mapping.content_path.includes('trade-ins')) {
-      content = tradeInsContent
-    }
-
-    if (mapping.content_path.includes('plan-changes')) {
-      content = planChangesContent
-    }
+    const content = contentLookup[mapping.content_path] || ''
 
     return {
       iaNodeId: mapping.ia_node_id,
