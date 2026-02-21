@@ -151,3 +151,38 @@ This milestone demonstrates that the IA and content design are:
 UI complexity (selectors, trees, navigation) is intentionally deferred to avoid obscuring architectural validation with presentation concerns.
 
 The frontend visualizes full IA paths (breadcrumbs) derived from canonical IA node identifiers to demonstrate complete architecture ingestion rather than selective data consumption.
+
+---
+
+## Iteration 2 – Introducing Strong Typing and Domain Contracts
+
+### Context
+
+Initially, the IA model and scenario mappings were consumed directly from JSON and transformed into renderable structures. While functional, this approach lacked explicit domain contracts, leaving structural guarantees implicit.
+
+### Decision
+
+We introduced TypeScript interfaces to formally model:
+
+- The IA hierarchy (Topic → Subtopic → Subsection → Level4)
+- Scenario resolution objects
+- The overall ArchitectureModel returned by `loadArchitecture`
+
+The `loadArchitecture` function now explicitly returns a typed `ArchitectureModel`, enforcing structural integrity at compile time.
+
+### Why This Matters
+
+This change transforms the IA from loosely structured JSON into a strongly typed domain model. It ensures:
+
+- Structural consistency
+- Early detection of breaking changes
+- Clear separation between storage format and domain representation
+- A contract-driven architecture suitable for scaling and API evolution
+
+### Transitional Limitation
+
+Content resolution currently relies on conditional string matching against `content_path`. While sufficient for the MVP stage, this approach does not scale cleanly as scenario count increases.
+
+### Next Step
+
+Refactor content resolution into a data-driven lookup model to eliminate branching logic and align with scalable, declarative content resolution patterns.
