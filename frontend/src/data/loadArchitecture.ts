@@ -9,7 +9,8 @@ const contentLookup: Record<string, string> = {
   'content/plans/consumer/phones/plan-changes.md': planChangesContent
 }
 
-export function loadArchitecture(): ArchitectureModel {
+export async function loadArchitecture(): Promise<ArchitectureModel> {
+  await new Promise(resolve => setTimeout(resolve, 800))
   const scenarios: Scenario[] = contentMap.mappings.map(mapping => {
     const content = contentLookup[mapping.content_path] || ''
 

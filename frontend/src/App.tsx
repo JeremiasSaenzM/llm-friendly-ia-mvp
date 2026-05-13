@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from "react"
+import { loadArchitecture } from "./data/loadArchitecture"
+import type { ArchitectureModel } from "./types/ia"
 import { useArchitecture } from './hooks/useArchitecture'
 
 function renderBreadcrumbs(iaNodeId: string) {
@@ -20,9 +22,22 @@ function renderBreadcrumbs(iaNodeId: string) {
 }
 
 function App() {
-  const data = useArchitecture()
+  const { architecture, loading, error } = useArchitecture()
   const [selectedIndex, setSelectedIndex] = useState(0)
-  const selectedScenario = data.scenarios[selectedIndex]
+
+  if (loading) {
+    return <p>Loading architecture...</p>
+  }
+
+  if (error) {
+    return <p>{error}</p>
+  }
+
+  if (!architecture) {
+    return <p>No architecture available.</p>
+  }
+
+  const selectedScenario = architecture.scenarios[selectedIndex]
 
   return (
     <div style={{ padding: '2rem', fontFamily: 'sans-serif' }}>
@@ -34,7 +49,7 @@ function App() {
           value={selectedIndex}
           onChange={(e) => setSelectedIndex(Number(e.target.value))}
         >
-          {data.scenarios.map((scenario, index) => (
+          {architecture.scenarios.map((scenario, index) => (
             <option key={scenario.iaNodeId} value={index}>
               {scenario.label}
             </option>
