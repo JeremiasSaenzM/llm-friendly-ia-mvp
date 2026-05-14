@@ -36,10 +36,14 @@ export interface Scenario {
   iaNodeId: string
   label: string
   contentPath: string
-  content: string
+  content: RetrievalContent
 }
 
 export interface ArchitectureModel {
   iaModel: Topic
   scenarios: Scenario[]
+}
+
+export interface RetrievalContent {
+  raw: string
 }

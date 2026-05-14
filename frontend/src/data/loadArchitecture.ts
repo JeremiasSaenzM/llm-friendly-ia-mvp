@@ -18,7 +18,9 @@ export async function loadArchitecture(): Promise<ArchitectureModel> {
       iaNodeId: mapping.ia_node_id,
       label: mapping.label,
       contentPath: mapping.content_path,
-      content
+      content: {
+        raw: content
+      }
     }
   })
 

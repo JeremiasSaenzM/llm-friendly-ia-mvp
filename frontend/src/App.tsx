@@ -74,7 +74,7 @@ function App() {
 
       <h3>Content (Markdown)</h3>
       <pre style={{ whiteSpace: 'pre-wrap' }}>
-        {selectedScenario.content}
+        {selectedScenario.content.raw}
       </pre>
     </div>
   )
