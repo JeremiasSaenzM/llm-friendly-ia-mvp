@@ -72,6 +72,16 @@ function App() {
         <strong>Content Path:</strong> {selectedScenario.contentPath}
       </p>
 
+      <h3>Retrieval Chunks</h3>
+
+      {selectedScenario.content.chunks.map(chunk => (
+        <div key={chunk.id}>
+          <strong>{chunk.id}</strong>
+
+          <pre>{chunk.text}</pre>
+        </div>
+      ))}
+
       <h3>Content (Markdown)</h3>
       <pre style={{ whiteSpace: 'pre-wrap' }}>
         {selectedScenario.content.raw}

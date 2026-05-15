@@ -44,6 +44,12 @@ export interface ArchitectureModel {
   scenarios: Scenario[]
 }
 
+export interface RetrievalChunk {
+  id: string
+  text: string
+}
+
 export interface RetrievalContent {
   raw: string
+  chunks: RetrievalChunk[]
 }
