@@ -24,10 +24,15 @@ function splitIntoChunks(content: string) {
           ? section.trim()
           : `## ${section.trim()}`
 
+      const cleanedText = text
+        .replace(/^---[\s\S]*?---/, '')
+        .replace(/\n---/g, '')
+        .trim()
+
       return {
         id: `chunk-${index + 1}`,
-        text,
-        tokenCount: estimateTokens(text)
+        text: cleanedText,
+        tokenCount: estimateTokens(cleanedText)
       }
     })
 }
