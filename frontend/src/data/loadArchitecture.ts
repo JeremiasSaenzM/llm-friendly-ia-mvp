@@ -3,6 +3,7 @@ import contentMap from '../../../ia/ia-content-map.json'
 import tradeInsContent from '../../../content/plans/consumer/phones/trade-ins.md?raw'
 import planChangesContent from '../../../content/plans/consumer/phones/plan-changes.md?raw'
 import type { ArchitectureModel, Scenario } from '../types/ia'
+import { encode } from 'gpt-tokenizer'
 
 const contentLookup: Record<string, string> = {
   'content/plans/consumer/phones/trade-ins.md': tradeInsContent,
@@ -10,7 +11,7 @@ const contentLookup: Record<string, string> = {
 }
 
 function estimateTokens(text: string) {
-  return Math.ceil(text.length / 4)
+  return encode(text).length
 }
 
 function splitIntoChunks(content: string) {
