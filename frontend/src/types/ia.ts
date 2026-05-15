@@ -47,6 +47,7 @@ export interface ArchitectureModel {
 export interface RetrievalChunk {
   id: string
   text: string
+  tokenCount: number
 }
 
 export interface RetrievalContent {

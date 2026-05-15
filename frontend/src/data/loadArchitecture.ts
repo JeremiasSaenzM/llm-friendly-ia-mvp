@@ -9,18 +9,27 @@ const contentLookup: Record<string, string> = {
   'content/plans/consumer/phones/plan-changes.md': planChangesContent
 }
 
+function estimateTokens(text: string) {
+  return Math.ceil(text.length / 4)
+}
+
 function splitIntoChunks(content: string) {
   const sections = content.split(/^##\s+/gm)
 
   return sections
     .filter(section => section.trim() !== '')
-    .map((section, index) => ({
-      id: `chunk-${index + 1}`,
-      text:
+    .map((section, index) => {
+      const text =
         index === 0
           ? section.trim()
           : `## ${section.trim()}`
-    }))
+
+      return {
+        id: `chunk-${index + 1}`,
+        text,
+        tokenCount: estimateTokens(text)
+      }
+    })
 }
 
 export async function loadArchitecture(): Promise<ArchitectureModel> {

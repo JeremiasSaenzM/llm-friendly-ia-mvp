@@ -76,7 +76,9 @@ function App() {
 
       {selectedScenario.content.chunks.map(chunk => (
         <div key={chunk.id}>
-          <strong>{chunk.id}</strong>
+          <strong>
+            {chunk.id} ({chunk.tokenCount} estimated tokens)
+          </strong>
 
           <pre>{chunk.text}</pre>
         </div>
